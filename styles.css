@@ -62,6 +62,7 @@ img {
 .nav-links,
 .proof-line,
 .platform-list,
+.cloud-list,
 .site-footer {
   display: flex;
   align-items: center;
@@ -205,7 +206,8 @@ h3 {
 
 .proof-line span,
 .privacy-stack span,
-.platform-list span {
+.platform-list span,
+.cloud-list span {
   display: inline-flex;
   align-items: center;
   min-height: 34px;
@@ -694,13 +696,39 @@ h3 {
 }
 
 .platforms {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: end;
   padding-top: 54px;
   padding-bottom: 54px;
+}
+
+.platform-copy {
+  max-width: 720px;
+}
+
+.platform-copy p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.62;
 }
 
 .platform-list {
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.cloud-list {
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.cloud-list span {
+  color: var(--teal);
+  background: var(--mint);
+  border-color: rgba(107, 247, 223, 0.24);
 }
 
 .waitlist {
@@ -792,6 +820,7 @@ textarea:focus {
   .site-header,
   .hero,
   .privacy,
+  .platforms,
   .waitlist,
   .section-intro.compact {
     grid-template-columns: 1fr;
