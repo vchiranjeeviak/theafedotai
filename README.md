@@ -20,8 +20,9 @@ to collect real signups.
 
 The page mirrors the Afe product design brief: a creamy off-white light theme,
 true-black dark theme, neutral controls, subtle semantic colors, generous spacing,
-and restrained motion. The hero uses a CSS-rendered Afe product preview so that the
-marketing surface stays aligned with the actual question-first app experience.
+restrained motion, and a selective liquid-glass layer for shell and context. The
+hero uses a CSS-rendered Afe product preview so that the marketing surface stays
+aligned with the actual question-first app experience.
 
 The older images in `assets/` are retained as historical draft explorations and are
 not used by the final landing page.
