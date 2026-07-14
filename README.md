@@ -16,18 +16,11 @@ The waitlist form stores submissions in browser `localStorage` under `afeWaitlis
 Replace the submit handler in `script.js` with a backend endpoint when you are ready
 to collect real signups.
 
-## Typography comparison
+## Typography
 
-The local comparison branch self-hosts the official variable files for Geist Sans,
-Instrument Sans, and Manrope. Add one of these query parameters to the local URL:
-
-- `?font=geist`
-- `?font=instrument`
-- `?font=manrope`
-
-The parameter changes typography only; theme, layout, content, and motion stay the
-same. Add `&theme=dark` when a fixed dark-theme comparison is useful. The font
-license files are kept beside the binaries in `assets/fonts/`.
+The site self-hosts the official, unmodified Geist Sans variable font. Geist is
+licensed under the SIL Open Font License 1.1; its copyright and complete license
+notice are retained in `assets/fonts/LICENSE-Geist.txt` beside the font binary.
 
 ## Visual direction
 
