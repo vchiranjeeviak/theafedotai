@@ -75,8 +75,8 @@ button { color: inherit; }
   background: linear-gradient(135deg, var(--glass-fill-strong), var(--glass-fill));
   border-color: var(--glass-border);
   box-shadow: var(--shadow-small), inset 0 1px 0 var(--glass-highlight);
-  -webkit-backdrop-filter: blur(12px) saturate(120%);
-  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+  backdrop-filter: blur(18px) saturate(125%);
 }
 .site-header {
   position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between;
