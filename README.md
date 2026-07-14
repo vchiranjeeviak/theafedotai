@@ -16,6 +16,12 @@ The waitlist form stores submissions in browser `localStorage` under `afeWaitlis
 Replace the submit handler in `script.js` with a backend endpoint when you are ready
 to collect real signups.
 
+## Typography
+
+The site self-hosts the official, unmodified Geist Sans variable font. Geist is
+licensed under the SIL Open Font License 1.1; its copyright and complete license
+notice are retained in `assets/fonts/LICENSE-Geist.txt` beside the font binary.
+
 ## Visual direction
 
 The page mirrors the Afe product design brief: a creamy off-white light theme,

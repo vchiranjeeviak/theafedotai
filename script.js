@@ -3,6 +3,7 @@ const themeToggle = document.querySelector(".theme-toggle");
 const themeLabel = document.querySelector(".theme-label");
 const themeIcon = document.querySelector(".theme-icon");
 const themeColor = document.querySelector('meta[name="theme-color"]');
+const queryParameters = new URLSearchParams(window.location.search);
 
 function setTheme(theme) {
   const isDark = theme === "dark";
@@ -15,7 +16,7 @@ function setTheme(theme) {
   localStorage.setItem("afe-theme", theme);
 }
 
-const queryTheme = new URLSearchParams(window.location.search).get("theme");
+const queryTheme = queryParameters.get("theme");
 const savedTheme = queryTheme || localStorage.getItem("afe-theme");
 setTheme(savedTheme === "dark" ? "dark" : "light");
 themeToggle?.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark"));
