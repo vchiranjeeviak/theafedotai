@@ -12,9 +12,20 @@ Open `index.html` in a browser, or serve the folder with any static server:
 python3 -m http.server 8080
 ```
 
-The waitlist form stores submissions in browser `localStorage` under `afeWaitlist`.
-Replace the submit handler in `script.js` with a backend endpoint when you are ready
-to collect real signups.
+On `localhost` the form targets
+`http://127.0.0.1:8000/v1/public/early-access` and uses Cloudflare's public testing
+site key. Run the Afe intake API with its local flags before testing a submission.
+
+For production, set the two configuration meta tags in `index.html`:
+
+- `afe-intake-endpoint` is the deployed HTTPS endpoint;
+- `afe-turnstile-site-key` is the public production widget key.
+
+The secret Turnstile key belongs only in the API runtime. The website never stores
+form submissions in the browser and never contains the secret.
+
+Browser behavior is split by responsibility under `assets/js/`: theme, motion, and
+waitlist submission can be changed independently without disturbing the other two.
 
 ## Typography
 
