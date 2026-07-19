@@ -6,10 +6,12 @@ const widgetSlot = document.querySelector("#turnstileWidget");
 const isLocal = ["localhost", "127.0.0.1"].includes(window.location.hostname);
 const endpointMeta = document.querySelector('meta[name="afe-intake-endpoint"]');
 const siteKeyMeta = document.querySelector('meta[name="afe-turnstile-site-key"]');
-const endpoint = endpointMeta?.content.trim()
-  || (isLocal ? "http://127.0.0.1:8000/v1/public/early-access" : "");
-const siteKey = siteKeyMeta?.content.trim()
-  || (isLocal ? "1x00000000000000000000AA" : "");
+const endpoint = isLocal
+  ? "http://127.0.0.1:8000/v1/public/early-access"
+  : endpointMeta?.content.trim();
+const siteKey = isLocal
+  ? "1x00000000000000000000AA"
+  : siteKeyMeta?.content.trim();
 
 let botToken = "";
 let widgetId;
