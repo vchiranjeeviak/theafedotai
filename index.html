@@ -8,6 +8,11 @@
       content="Afe is a calm, evidence-backed personal assistant that learns how you work and asks what matters next."
     />
     <meta name="theme-color" content="#f7f4ee" />
+    <meta
+      name="afe-intake-endpoint"
+      content="https://afe-intake-6c6gpnid7a-el.a.run.app/v1/public/early-access"
+    />
+    <meta name="afe-turnstile-site-key" content="0x4AAAAAAD46LKgyEdnvkuWu" />
     <title>Afe — context that moves with you</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link
@@ -233,12 +238,16 @@
           <h2>Build a better relationship with your own context.</h2>
           <p>Tell us what you want Afe to notice first. We are building the product with knowledge workers who want fewer tabs, fewer interruptions, and better continuity.</p>
         </div>
-        <form class="waitlist-form glass-surface reveal reveal-delay" data-tilt data-tilt-strength="2" id="waitlistForm">
-          <label>Name<input name="name" autocomplete="name" required placeholder="Your name" /></label>
-          <label>Email<input name="email" type="email" autocomplete="email" required placeholder="you@example.com" /></label>
-          <label>What should Afe notice first?<textarea name="pain" rows="3" placeholder="Meeting prep, follow-ups, incidents, decisions…"></textarea></label>
-          <button class="button button-primary" type="submit">Join the early list <span aria-hidden="true">↗</span></button>
-          <p class="form-note" id="formNote">No spam. Just thoughtful product updates.</p>
+        <form class="waitlist-form glass-surface reveal reveal-delay" data-tilt data-tilt-strength="2" id="waitlistForm" aria-describedby="formNote">
+          <label>Name<input name="name" autocomplete="name" maxlength="100" required placeholder="Your name" /></label>
+          <label>Email<input name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" required placeholder="you@example.com" /></label>
+          <label>What should Afe notice first?<textarea name="problem" rows="3" maxlength="2000" placeholder="Meeting prep, follow-ups, incidents, decisions…"></textarea></label>
+          <label class="honeypot-field" aria-hidden="true">Company<input name="company" autocomplete="off" tabindex="-1" /></label>
+          <label class="consent-field"><input name="consent" type="checkbox" required /><span>You may email me about Afe early access. I can ask to be removed at any time.</span></label>
+          <div class="turnstile-slot" id="turnstileWidget" aria-label="Bot verification"></div>
+          <button class="button button-primary" type="submit"><span class="button-label">Join the early list</span> <span aria-hidden="true">↗</span></button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite">Your details are used only for Afe early-access contact.</p>
+          <noscript><p class="form-note error">JavaScript is required for secure submission. You can instead email <a href="mailto:hello@theafe.ai">hello@theafe.ai</a>.</p></noscript>
         </form>
       </section>
     </main>
@@ -249,6 +258,6 @@
       <div class="footer-links"><a href="mailto:hello@theafe.ai">hello@theafe.ai</a><a href="#trust">Privacy principles</a></div>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>
